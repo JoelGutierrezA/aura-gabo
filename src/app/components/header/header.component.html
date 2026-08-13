@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio" (click)="closeMenu()">
+      <span class="brand__mark" aria-hidden="true">AG</span>
+      <span>Auraluminio</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="primary-navigation"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      id="primary-navigation"
+      class="site-nav"
+      [class.site-nav--open]="isMenuOpen()"
+      aria-label="Navegacion principal"
+    >
+      @for (item of navigationItems; track item.href) {
+        <a [href]="item.href" (click)="closeMenu()">{{ item.label }}</a>
+      }
+    </nav>
+  </div>
+</header>

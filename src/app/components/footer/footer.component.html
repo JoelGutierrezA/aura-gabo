@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="footer__inner container">
+    <div>
+      <a class="footer__brand" href="#inicio">
+        <span>AG</span>
+        <strong>Auraluminio</strong>
+      </a>
+      <p>Landing mock preparada para evolucionar con contenido, imagenes y servicios reales.</p>
+    </div>
+
+    <nav aria-label="Enlaces del footer">
+      <h2>Enlaces</h2>
+      @for (item of navigationItems; track item.href) {
+        <a [href]="item.href">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div>
+      <h2>Contacto</h2>
+      <p>contacto&#64;auragabo.cl</p>
+      <p>+56 9 1234 5678</p>
+      <p>Santiago, Chile</p>
+    </div>
+
+    <div>
+      <h2>Redes</h2>
+      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom container">
+    <small>Copyright {{ currentYear }} Auraluminio. Todos los derechos reservados.</small>
+    <small>Desarrollado por Miraitech</small>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+<section id="servicios" class="section section--muted" aria-labelledby="services-title">
+  <div class="container">
+    <p class="eyebrow">Servicios</p>
+    <h2 id="services-title" class="section-title">Tres lineas mock para ordenar la oferta inicial.</h2>
+    <p class="section-copy">
+      Los servicios viven en una estructura de datos simple para sumar, quitar o editar cards rapidamente cuando exista contenido definitivo.
+    </p>
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

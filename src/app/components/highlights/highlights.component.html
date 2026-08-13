@@ -1,0 +1,23 @@
+<section id="beneficios" class="section" aria-labelledby="highlights-title">
+  <div class="highlights container">
+    <div>
+      <p class="eyebrow">Beneficios</p>
+      <h2 id="highlights-title" class="section-title">Informacion destacada lista para adaptarse al relato final.</h2>
+      <p class="section-copy">
+        Esta seccion puede convertirse en beneficios, proceso de trabajo, diferenciadores, cifras o testimonios sin alterar la arquitectura general.
+      </p>
+    </div>
+
+    <div class="highlights__list">
+      @for (highlight of highlights; track highlight.label) {
+        <article class="highlight-item">
+          <span>{{ highlight.value }}</span>
+          <div>
+            <h3>{{ highlight.label }}</h3>
+            <p>{{ highlight.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
