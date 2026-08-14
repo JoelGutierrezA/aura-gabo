@@ -1,12 +1,12 @@
 export interface NavigationItem {
   label: string;
-  href: string;
+  fragment: string;
 }
 
 export const LANDING_NAVIGATION: NavigationItem[] = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Beneficios', href: '#beneficios' },
-  { label: 'Contacto', href: '#contacto' }
+  { label: 'Inicio', fragment: 'inicio' },
+  { label: 'Sobre', fragment: 'sobre' },
+  { label: 'Productos', fragment: 'productos' },
+  { label: 'Beneficios', fragment: 'beneficios' },
+  { label: 'Contacto', fragment: 'contacto' }
 ];

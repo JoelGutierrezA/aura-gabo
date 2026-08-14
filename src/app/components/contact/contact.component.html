@@ -47,6 +47,16 @@
         }
       </label>
 
+      <label class="contact-form__checkbox">
+        <input type="checkbox" formControlName="acceptedPolicies">
+        <span>
+          Acepto las <a routerLink="/politicas-privacidad">politicas de privacidad</a>.
+        </span>
+      </label>
+      @if (hasError('acceptedPolicies')) {
+        <small>Debes aceptar las politicas para enviar el formulario.</small>
+      }
+
       <button class="button button--primary" type="submit">Enviar</button>
 
       @if (submitSucceeded) {

@@ -73,9 +73,42 @@
   font-weight: 700;
 }
 
+.contact-form__checkbox {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.contact-form__checkbox input {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  margin: 3px 0 0;
+  accent-color: #000000;
+}
+
+.contact-form__checkbox span {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.contact-form__checkbox a {
+  color: #000000;
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .contact-form button {
   width: fit-content;
   min-width: 160px;
+  background: #000000;
+  color: #ffffff;
+}
+
+.contact-form button:hover {
+  background: #1a1a1a;
 }
 
 .contact-form__status {

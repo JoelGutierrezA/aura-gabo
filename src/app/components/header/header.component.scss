@@ -2,9 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid rgba(220, 229, 223, 0.84);
-  background: rgba(248, 250, 247, 0.92);
-  backdrop-filter: blur(16px);
+  border-bottom: 0;
+  background: #000000;
 }
 
 .site-header__inner {
@@ -22,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--color-text);
+  color: #ffffff;
   font-weight: 800;
 }
 
@@ -32,8 +31,9 @@
   height: 40px;
   place-items: center;
   border-radius: var(--radius);
-  background: var(--color-primary);
-  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: #ffffff;
+  color: #000000;
   font-size: 0.82rem;
 }
 
@@ -42,7 +42,7 @@
   align-items: center;
   justify-self: center;
   gap: 26px;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.76);
   font-size: 0.95rem;
   font-weight: 650;
 }
@@ -52,7 +52,40 @@
 }
 
 .site-nav a:hover {
-  color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.header-social {
+  display: flex;
+  justify-self: end;
+  gap: 8px;
+}
+
+.header-social a {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
+  color: #ffffff;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.header-social a:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #000000;
+}
+
+.header-social svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .menu-toggle {
@@ -61,9 +94,9 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--radius);
-  background: var(--color-surface);
+  background: #000000;
 }
 
 .menu-toggle span {
@@ -72,7 +105,7 @@
   height: 2px;
   margin: 4px auto;
   border-radius: 999px;
-  background: var(--color-text);
+  background: #ffffff;
 }
 
 @media (max-width: 860px) {
@@ -85,6 +118,10 @@
     display: block;
   }
 
+  .header-social {
+    display: none;
+  }
+
   .site-nav {
     position: fixed;
     inset: 68px 0 auto;
@@ -92,9 +129,9 @@
     justify-self: stretch;
     gap: 6px;
     padding: 18px;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-surface);
-    box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background: #000000;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
     opacity: 0;
     pointer-events: none;
     transform: translateY(-10px);

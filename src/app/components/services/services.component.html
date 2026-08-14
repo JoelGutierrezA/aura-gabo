@@ -1,17 +1,17 @@
-<section id="servicios" class="section section--muted" aria-labelledby="services-title">
+<section id="productos" class="section section--muted" aria-labelledby="products-title">
   <div class="container">
-    <p class="eyebrow">Servicios</p>
-    <h2 id="services-title" class="section-title">Tres lineas mock para ordenar la oferta inicial.</h2>
+    <p class="eyebrow">Productos</p>
+    <h2 id="products-title" class="section-title">Lamparas mock para presentar la oferta inicial.</h2>
     <p class="section-copy">
-      Los servicios viven en una estructura de datos simple para sumar, quitar o editar cards rapidamente cuando exista contenido definitivo.
+      Los productos viven en una estructura de datos simple para sumar, quitar o editar cards rapidamente cuando exista el catalogo definitivo.
     </p>
 
-    <div class="services-grid">
-      @for (service of services; track service.title) {
+    <div class="products-grid">
+      @for (product of products; track product.title) {
         <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">{{ service.icon }}</div>
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
+          <div class="service-card__icon" aria-hidden="true">{{ product.icon }}</div>
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
         </article>
       }
     </div>

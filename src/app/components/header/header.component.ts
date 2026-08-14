@@ -1,10 +1,12 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LANDING_NAVIGATION } from '../../shared/navigation';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

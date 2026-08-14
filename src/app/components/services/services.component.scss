@@ -2,7 +2,7 @@
   max-width: none;
 }
 
-.services-grid {
+.products-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 22px;
@@ -41,7 +41,7 @@
 }
 
 @media (max-width: 860px) {
-  .services-grid {
+  .products-grid {
     grid-template-columns: 1fr;
     gap: 16px;
     margin-top: 32px;
