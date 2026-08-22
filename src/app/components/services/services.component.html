@@ -1,15 +1,17 @@
 <section id="productos" class="section section--muted" aria-labelledby="products-title">
   <div class="container">
     <p class="eyebrow">Productos</p>
-    <h2 id="products-title" class="section-title">Lamparas mock para presentar la oferta inicial.</h2>
+    <h2 id="products-title" class="section-title">Lamparas decorativas con diseno luminico.</h2>
     <p class="section-copy">
-      Los productos viven en una estructura de datos simple para sumar, quitar o editar cards rapidamente cuando exista el catalogo definitivo.
+      Dos piezas iniciales para presentar la linea Aura Luminico con imagenes reales de producto.
     </p>
 
     <div class="products-grid">
       @for (product of products; track product.title) {
         <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">{{ product.icon }}</div>
+          <div class="service-card__media">
+            <img [src]="product.image" [alt]="product.title" width="900" height="900">
+          </div>
           <h3>{{ product.title }}</h3>
           <p>{{ product.description }}</p>
         </article>

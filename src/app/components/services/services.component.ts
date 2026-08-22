@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 interface ProductItem {
-  icon: string;
+  image: string;
   title: string;
   description: string;
 }
@@ -15,19 +15,14 @@ interface ProductItem {
 export class ServicesComponent {
   protected readonly products: ProductItem[] = [
     {
-      icon: '01',
-      title: 'Lamparas colgantes',
-      description: 'Piezas mock pensadas para comedores, livings y espacios con iluminacion protagonista.'
+      image: '/assets/IMG_5404.jpg',
+      title: 'Lampara Aura',
+      description: 'Pieza luminica de mesa con estructura organica y luz calida envolvente.'
     },
     {
-      icon: '02',
-      title: 'Lamparas de muro',
-      description: 'Modelos decorativos para pasillos, dormitorios y ambientes que requieren luz ambiental.'
-    },
-    {
-      icon: '03',
-      title: 'Lamparas de mesa',
-      description: 'Opciones versatiles para veladores, escritorios y rincones de lectura.'
+      image: '/assets/IMG_5413.jpg',
+      title: 'Lampara Botanica',
+      description: 'Diseno inspirado en hojas superpuestas para ambientes decorativos y acogedores.'
     }
   ];
 }
