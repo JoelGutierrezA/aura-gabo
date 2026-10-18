@@ -1,40 +1,24 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: clamp(720px, 70vw, 1120px);
   overflow: hidden;
   background: #000000;
-  scroll-margin-top: 76px;
+  scroll-margin-top: 77px;
 }
 
 .hero__image {
   width: 100%;
-  height: clamp(720px, 70vw, 1120px);
+  height: min(66.6667vw, calc(100svh - 77px));
   object-fit: cover;
-  object-position: center 34%;
+  object-position: center bottom;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 860px) {
   .hero {
-    min-height: clamp(680px, 118vw, 920px);
-    scroll-margin-top: 68px;
+    scroll-margin-top: 69px;
   }
 
   .hero__image {
-    height: clamp(680px, 118vw, 920px);
-    object-position: center 28%;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero {
-    min-height: auto;
-  }
-
-  .hero__image {
-    height: auto;
-    min-height: 0;
-    object-fit: contain;
-    object-position: center top;
+    height: min(66.6667vw, calc(100svh - 69px));
   }
 }

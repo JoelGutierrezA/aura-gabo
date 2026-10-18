@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DOCUMENT, ViewportScroller } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,4 +15,14 @@ import { HeaderComponent } from './components/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(
+    @Inject(DOCUMENT) document: Document,
+    viewportScroller: ViewportScroller
+  ) {
+    viewportScroller.setOffset(() => [
+      0,
+      document.querySelector<HTMLElement>('.site-header')?.offsetHeight ?? 0
+    ]);
+  }
+}

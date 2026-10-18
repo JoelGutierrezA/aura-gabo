@@ -5,7 +5,7 @@ export interface NavigationItem {
 
 export const LANDING_NAVIGATION: NavigationItem[] = [
   { label: 'Inicio', fragment: 'inicio' },
-  { label: 'Sobre', fragment: 'sobre' },
+  { label: 'Quienes Somos', fragment: 'sobre' },
   { label: 'Productos', fragment: 'productos' },
   { label: 'Contacto', fragment: 'contacto' }
 ];
