@@ -1,19 +1,50 @@
 <section id="productos" class="section section--muted" aria-labelledby="products-title">
   <div class="container">
-    <p class="eyebrow">Productos</p>
-    <h2 id="products-title" class="section-title">Lamparas decorativas con diseno luminico.</h2>
-    <p class="section-copy">
-      Dos piezas iniciales para presentar la linea Auraluminico con imagenes reales de producto.
-    </p>
+    <h2 id="products-title" class="section-title">Lámparas decorativas con diseño lumínico</h2>
 
     <div class="products-grid">
-      @for (product of products; track product.title) {
-        <article class="service-card">
-          <div class="service-card__media">
-            <img [src]="product.image" [alt]="product.title" width="900" height="900">
+      @for (product of products; track product.id) {
+        <article class="service-card" [class.service-card--flipped]="flippedProducts().has(product.id)"
+          [attr.aria-label]="product.title">
+          <div class="service-card__inner">
+            <div class="service-card__face service-card__front"
+              [attr.aria-hidden]="flippedProducts().has(product.id)"
+              [attr.inert]="flippedProducts().has(product.id) ? '' : null">
+              <div class="service-card__media">
+                <img [src]="product.imageOn" [alt]="'Lámpara ' + product.title + ' encendida'"
+                  [width]="product.imageSize" [height]="product.imageSize" loading="lazy" decoding="async">
+              </div>
+              <div class="service-card__footer">
+                <h3>{{ product.title }}</h3>
+                <button #frontButton class="service-card__button" type="button"
+                  [attr.aria-label]="'Ver más sobre ' + product.title" [attr.aria-controls]="'details-' + product.id"
+                  [attr.aria-expanded]="flippedProducts().has(product.id)"
+                  (click)="flipProduct(product.id, backButton)">Ver más</button>
+              </div>
+            </div>
+
+            <div class="service-card__face service-card__back" [id]="'details-' + product.id"
+              [attr.aria-hidden]="!flippedProducts().has(product.id)"
+              [attr.inert]="!flippedProducts().has(product.id) ? '' : null"
+              (keydown.escape)="flipProduct(product.id, frontButton); $event.stopPropagation()">
+              <img class="service-card__off-image" [src]="product.imageOff"
+                [alt]="'Lámpara ' + product.title + ' apagada'" [width]="product.imageSize"
+                [height]="product.imageSize" loading="lazy" decoding="async">
+              <div class="service-card__features">
+                <h3>Características</h3>
+                @if (product.features.length) {
+                  <ul>
+                    @for (feature of product.features; track $index) {
+                      <li>{{ feature }}</li>
+                    }
+                  </ul>
+                }
+              </div>
+              <button #backButton class="service-card__button service-card__button--back" type="button"
+                [attr.aria-label]="'Volver a la foto encendida de ' + product.title"
+                (click)="flipProduct(product.id, frontButton)">Volver</button>
+            </div>
           </div>
-          <h3>{{ product.title }}</h3>
-          <p>{{ product.description }}</p>
         </article>
       }
     </div>
