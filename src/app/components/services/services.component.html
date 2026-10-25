@@ -27,22 +27,32 @@
               [attr.aria-hidden]="!flippedProducts().has(product.id)"
               [attr.inert]="!flippedProducts().has(product.id) ? '' : null"
               (keydown.escape)="flipProduct(product.id, frontButton); $event.stopPropagation()">
-              <img class="service-card__off-image" [src]="product.imageOff"
-                [alt]="'Lámpara ' + product.title + ' apagada'" [width]="product.imageSize"
-                [height]="product.imageSize" loading="lazy" decoding="async">
-              <div class="service-card__features">
-                <h3>Características</h3>
-                @if (product.features.length) {
-                  <ul>
-                    @for (feature of product.features; track $index) {
-                      <li>{{ feature }}</li>
-                    }
-                  </ul>
-                }
+              <div class="service-card__back-header">
+                <img class="service-card__off-image" [src]="product.imageOff"
+                  [alt]="'Lámpara ' + product.title + ' apagada'" [width]="product.imageSize"
+                  [height]="product.imageSize" loading="lazy" decoding="async">
+                <div>
+                  <h3>{{ product.title }}</h3>
+                  <p class="service-card__details-label">Características</p>
+                </div>
               </div>
-              <button #backButton class="service-card__button service-card__button--back" type="button"
-                [attr.aria-label]="'Volver a la foto encendida de ' + product.title"
-                (click)="flipProduct(product.id, frontButton)">Volver</button>
+              <div class="service-card__features">
+                @for (paragraph of product.description; track $index) {
+                  <p class="service-card__description">{{ paragraph }}</p>
+                }
+                <ul>
+                  <li>{{ product.dimensions }}</li>
+                  @for (feature of product.features; track $index) {
+                    <li class="service-card__included-feature">{{ feature }}</li>
+                  }
+                </ul>
+              </div>
+              <div class="service-card__back-footer">
+                <p class="service-card__price">Valor: <strong>{{ product.price }}</strong></p>
+                <button #backButton class="service-card__button service-card__button--back" type="button"
+                  [attr.aria-label]="'Volver a la foto encendida de ' + product.title"
+                  (click)="flipProduct(product.id, frontButton)">Volver</button>
+              </div>
             </div>
           </div>
         </article>

@@ -97,14 +97,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   padding: 28px;
   transform: rotateY(180deg);
 }
 
+.service-card__back-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.service-card__details-label {
+  margin: 6px 0 0;
+  color: var(--color-text-muted);
+}
+
 .service-card__off-image {
-  width: 60%;
-  max-width: 220px;
+  flex-shrink: 0;
+  width: 30%;
+  max-width: 120px;
   height: auto;
   aspect-ratio: 1;
   border-radius: 6px;
@@ -118,44 +131,109 @@
   text-align: left;
 }
 
-.service-card__features h3 {
-  margin-bottom: 16px;
+.service-card__features p {
+  margin: 0 0 12px;
+  color: var(--color-text-muted);
 }
 
 .service-card__features ul {
   display: grid;
   gap: 8px;
-  margin: 0;
+  margin: 20px 0 0;
   padding-left: 20px;
   color: var(--color-text-muted);
 }
 
-.service-card__button--back {
-  align-self: flex-start;
+.service-card__back-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.service-card__price {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.service-card__price strong {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 640px) {
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 460px;
+    gap: 12px;
+    align-items: start;
     margin-top: 32px;
   }
 
-  .service-card__footer,
+  .service-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  .service-card__footer h3 {
+    min-height: 2.5em;
+  }
+
   .service-card__back {
-    padding: 22px;
+    justify-content: center;
+    gap: 16px;
+    padding: 14px;
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
+  }
+
+  .service-card__back-header,
+  .service-card__description,
+  .service-card__included-feature {
+    display: none;
+  }
+
+  .service-card__features {
+    flex: none;
+    min-height: 0;
+  }
+
+  .service-card__features ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .service-card__button {
+    width: 100%;
+    padding-inline: 10px;
+    font-size: 0.875rem;
+  }
+
+  .service-card__back-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .service-card__price strong {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 380px) {
-  .service-card__footer {
-    gap: 12px;
-    padding: 18px;
+  .products-grid {
+    gap: 10px;
   }
 
-  .service-card__button {
-    padding-inline: 16px;
+  .service-card__footer,
+  .service-card__back {
+    padding: 10px;
   }
 }
 
