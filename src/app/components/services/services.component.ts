@@ -63,7 +63,7 @@ export class ServicesComponent {
       ],
       dimensions: '32 cm de alto · 20 cm de ancho',
       features: ['Incluye ampolleta de luz cálida'],
-      price: '$30.000'
+      price: '$35.000'
     },
     {
       id: 'savia',
